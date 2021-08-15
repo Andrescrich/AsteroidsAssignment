@@ -31,9 +31,6 @@ public class AsteroidBehaviour : MonoBehaviour, IPooledObject
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == 7) 
-            GameManager.Instance.ModifyHealth(-1);
-        
         if (other.gameObject.layer == 8)
         {
             if (type == AsteroidType.Asteroid)
@@ -54,6 +51,7 @@ public class AsteroidBehaviour : MonoBehaviour, IPooledObject
             }
 
             int randomDrop = Random.Range(0, 15);
+            
             switch (randomDrop)
             {
                 case 1:

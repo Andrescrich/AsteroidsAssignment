@@ -37,12 +37,12 @@ public class ObjectPooler : MonoBehaviour
         }
     }
 
-    public void Spawn(string poolTag, Vector3 position, Quaternion rotation)
+    public GameObject Spawn(string poolTag, Vector3 position, Quaternion rotation)
     {
         if (!_poolDict.ContainsKey(poolTag))
         {
             Debug.LogWarning("Pool tag " + poolTag + " doesnt exist");
-            return;
+            return null;
         }
         
         GameObject spawnObj = _poolDict[poolTag].Dequeue();
@@ -54,6 +54,6 @@ public class ObjectPooler : MonoBehaviour
         pooledObject?.onSpawn();
         
         _poolDict[poolTag].Enqueue(spawnObj);
-        
+        return spawnObj;
     }
 }

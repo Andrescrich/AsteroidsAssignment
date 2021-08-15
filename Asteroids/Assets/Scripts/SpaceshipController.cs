@@ -3,18 +3,12 @@ using UnityEngine;
 
 public class SpaceshipController : MonoBehaviour
 {
-    public static SpaceshipController Instance;
     public float smoothTime = 0.3f;
-    public bool poweredUp;
-
 
     [SerializeField] private float shootingSpeed;
     [SerializeField] private GameObject[] cannons;
     private Vector2 _velocity = Vector2.zero;
     private bool _shooting;
-    private Coroutine powerUpCor;
-
-    private void Awake() => Instance = this;
 
     private void Update()
     {
@@ -42,7 +36,7 @@ public class SpaceshipController : MonoBehaviour
     private IEnumerator Shoot()
     {
         _shooting = true;
-        if(!poweredUp)
+        if(!GameManager.Instance.poweredUp)
             ObjectPooler.Instance.Spawn("Bullet", cannons[0].transform.position, cannons[0].transform.rotation);
         else
         {
@@ -55,17 +49,9 @@ public class SpaceshipController : MonoBehaviour
         _shooting = false;
     }
 
-    public void PowerUpBuff()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(powerUpCor != null)
-            StopCoroutine(powerUpCor);
-        powerUpCor = StartCoroutine(PowerUpBuffCor());
-    }
-    
-    private IEnumerator PowerUpBuffCor()
-    {
-        poweredUp = true;
-        yield return new WaitForSeconds(3);
-        poweredUp = false;
+        if (other.gameObject.layer == 6) 
+            StartCoroutine(GameManager.Instance.ShipDestroyed());
     }
 }

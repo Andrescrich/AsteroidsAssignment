@@ -2,11 +2,9 @@ using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class AsteroidSpawner : MonoBehaviour
+public class AsteroidSpawner
 {
-    private void Start() => SpawnRound(6);
-
-    private void SpawnRound(int amount)
+    public void SpawnRound(int amount)
     {
         for (int i = 0; i < amount; i++)
         {

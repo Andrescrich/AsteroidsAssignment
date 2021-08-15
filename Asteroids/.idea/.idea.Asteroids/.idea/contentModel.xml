@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\andre\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\andre\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Asteroids.-1595805565.00" t="ExcludeRecursive" />
-    <e p="D:\Unity Projects\AsteroidTask\Asteroids" t="IncludeRecursive">
+    <e p="C:\Users\andre\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Asteroids.1469434912.00" t="ExcludeRecursive" />
+    <e p="D:\Unity Projects\AsteroidsAssignment\Asteroids" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="PowerUpBehaviour.cs" t="Include" />

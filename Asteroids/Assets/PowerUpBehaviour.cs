@@ -1,5 +1,5 @@
 public class PowerUpBehaviour : PickUpBehaviour
 {
-    protected override void OnPlayerCollision() => SpaceshipController.Instance.PowerUpBuff();
+    protected override void OnPlayerCollision() => GameManager.Instance.PowerUpBuff();
 
 }
